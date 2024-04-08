@@ -77,12 +77,12 @@ export default function Skeleton({ variant }: SkeletonProps) {
             )}
             {variant == 'list' && (
                 <div className='flex flex-col gap-2'>
-                    <div className='bg-brand-gray-light/60 h-8 w-full animate-pulse' />
-                    <div className='bg-brand-gray-light/50 h-8 w-full animate-pulse' />
-                    <div className='bg-brand-gray-light/40 h-8 w-full animate-pulse' />
-                    <div className='bg-brand-gray-light/30 h-8 w-full animate-pulse' />
-                    <div className='bg-brand-gray-light/20 h-8 w-full animate-pulse' />
-                    <div className='bg-brand-gray-light/10 h-8 w-full animate-pulse' />
+                    <div className='bg-brand-gray-light/35 h-8 w-full animate-pulse rounded-lg' />
+                    <div className='bg-brand-gray-light/30 h-8 w-full animate-pulse rounded-lg' />
+                    <div className='bg-brand-gray-light/25 h-8 w-full animate-pulse rounded-lg' />
+                    <div className='bg-brand-gray-light/20 h-8 w-full animate-pulse rounded-lg' />
+                    <div className='bg-brand-gray-light/15 h-8 w-full animate-pulse rounded-lg' />
+                    <div className='bg-brand-gray-light/10 h-8 w-full animate-pulse rounded-lg' />
                 </div>
             )}
         </>
