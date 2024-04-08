@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+import { Urbanist } from 'next/font/google';
 import './globals.css';
+import Sidebar from '@/components/Sidebar';
 
-const outfit = Outfit({ subsets: ['latin'] });
+const urbanist = Urbanist({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
     title: 'Game Hub',
@@ -16,7 +17,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body className={outfit.className}>{children}</body>
+            <body
+                className={` ${urbanist.className} bg-brand-black text-brand-white `}
+            >
+                <div className='flex gap-6 px-6'>
+                    <Sidebar />
+                    {children}
+                </div>
+            </body>
         </html>
     );
 }
