@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { Urbanist } from 'next/font/google';
 import './globals.css';
+
 import Sidebar from '@/components/Sidebar';
+import BackgroundImage from '@/components/BackgroundImage';
+import { GameImageProvider } from '@/context/GameImageContext';
 
 const urbanist = Urbanist({ subsets: ['latin'] });
 
@@ -20,10 +23,13 @@ export default function RootLayout({
             <body
                 className={` ${urbanist.className} bg-brand-black text-brand-white `}
             >
-                <div className='flex gap-6 px-6'>
-                    <Sidebar />
-                    {children}
-                </div>
+                <GameImageProvider>
+                    <BackgroundImage />
+                    <div className='flex gap-6 px-6'>
+                        <Sidebar />
+                        {children}
+                    </div>
+                </GameImageProvider>
             </body>
         </html>
     );
