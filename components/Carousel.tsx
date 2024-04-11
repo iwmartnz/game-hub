@@ -1,7 +1,7 @@
 'use client';
-import React, { SetStateAction, useState } from 'react';
+import React, { SetStateAction } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import * as Dialog from '@radix-ui/react-dialog';
 import {
@@ -39,17 +39,17 @@ export default function Carousel({
         <Dialog.Root open={open} onOpenChange={setShowCarousel} modal>
             <Dialog.Trigger>Open Modal</Dialog.Trigger>
             <Dialog.Portal>
-                <Dialog.Overlay className=' bg-brand-black/90 fixed inset-0 backdrop-blur-sm' />
+                <Dialog.Overlay className=' fixed inset-0 z-20 bg-brand-black/90 backdrop-blur-sm' />
 
                 <Dialog.Content asChild>
                     <motion.div
                         initial={{ opacity: 0, width: '40%' }}
                         animate={{ opacity: 1, width: '100%' }}
                         transition={{ duration: 0.2 }}
-                        className=' fixed left-[50%] top-[50%] flex max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] items-end justify-center rounded-[6px] shadow-xl  focus:outline-none lg:w-[200vh] lg:max-w-[1000px]'
+                        className=' fixed left-[50%] top-[50%] z-30 flex max-h-[85vh] w-[90vw] max-w-[450px] translate-x-[-50%] translate-y-[-50%] items-end justify-center rounded-[6px] shadow-xl  focus:outline-none lg:w-[200vh] lg:max-w-[1000px]'
                     >
-                        <figure className='bg-brand-black aspect-video h-auto w-full overflow-hidden rounded-xl'>
-                            <img
+                        <figure className='aspect-video h-auto w-full overflow-hidden rounded-xl bg-brand-black'>
+                            <Image
                                 src={images[index].image}
                                 alt=''
                                 width={800}
@@ -61,21 +61,21 @@ export default function Carousel({
                             <button
                                 onClick={decrement}
                                 disabled={index === 0}
-                                className='text-brand-black  rounded-full bg-white p-1 shadow-md shadow-black/50 backdrop-blur-sm disabled:opacity-20'
+                                className='rounded-full  bg-white p-1 text-brand-black shadow-md shadow-black/50 backdrop-blur-sm disabled:opacity-20'
                             >
                                 <ChevronLeftIcon className='h-8 w-8' />
                             </button>
                             <button
                                 onClick={increment}
                                 disabled={index >= images.length - 1}
-                                className='text-brand-black  rounded-full bg-white p-1  shadow-md shadow-black/50 backdrop-blur-sm disabled:opacity-20'
+                                className='rounded-full  bg-white p-1 text-brand-black  shadow-md shadow-black/50 backdrop-blur-sm disabled:opacity-20'
                             >
                                 <ChevronRightIcon className='h-8 w-8' />
                             </button>
                         </div>
                         <button
                             onClick={() => setShowCarousel(false)}
-                            className='text-brand-black absolute -right-2 -top-2  rounded-full bg-white p-1 shadow-md shadow-black/50'
+                            className='absolute -right-2 -top-2 rounded-full  bg-white p-1 text-brand-black shadow-md shadow-black/50'
                         >
                             <CloseIcon className='h-6 w-6' />
                         </button>
