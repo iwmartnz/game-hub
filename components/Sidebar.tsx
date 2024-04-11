@@ -13,11 +13,12 @@ export default async function Sidebar() {
 
     return (
         <aside className='hidden min-h-screen min-w-60 flex-col lg:flex'>
-            <Link href='/games'>
-                <Heading type='subheading' className='pb-2 pt-12'>
-                    All Games
-                </Heading>
-            </Link>
+            <div className='pb-2 pt-12'>
+                <Link href='/games'>
+                    <Heading type='subheading'>All Games</Heading>
+                </Link>
+            </div>
+
             <Heading type='subheading' className='pb-2 pt-4'>
                 Genres
             </Heading>
