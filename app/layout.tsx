@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Urbanist } from 'next/font/google';
 import './globals.css';
 
+import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import BackgroundImage from '@/components/BackgroundImage';
 import { GameImageProvider } from '@/context/GameImageContext';
@@ -25,6 +26,7 @@ export default function RootLayout({
             >
                 <GameImageProvider>
                     <BackgroundImage />
+                    <Header />
                     <div className='flex gap-6 px-6'>
                         <Sidebar />
                         {children}
