@@ -1,4 +1,5 @@
 const API_KEY = process.env.RAWG_API_KEY;
+const PUBLIC_API_KEY = process.env.NEXT_PUBLIC_RAWG_API_KEY;
 
 type ApiGame = {
     id: number;
@@ -84,7 +85,7 @@ export const getGameScreenshots = async (id: string) => {
 export const getGamesByTitle = async (title: string) => {
     try {
         const res = await fetch(
-            `https://api.rawg.io/api/games?key=${API_KEY}&search=${title}`
+            `https://api.rawg.io/api/games?key=${PUBLIC_API_KEY}&search=${title}`
         );
         const data = await res.json();
 
