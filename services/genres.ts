@@ -34,15 +34,13 @@ export const getGenreDetails = async (id: string) => {
         );
         const ApiGenre = await res.json();
 
-        const genre: Genre = {
+        return {
             id: ApiGenre.id,
             name: ApiGenre.name,
             slug: ApiGenre.slug,
             image: ApiGenre.image_background,
             description: ApiGenre.description,
         };
-
-        return genre;
     } catch (error) {
         console.log('Failed to fetch game genres', error);
     }
