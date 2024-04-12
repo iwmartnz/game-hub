@@ -30,13 +30,15 @@ export default function GamesModal({
     return (
         <>
             <motion.div
+                key='modal'
                 initial={{ opacity: 0, height: '0%' }}
                 animate={{
                     opacity: 1,
                     height: 'auto',
+                    zIndex: 1,
                 }}
-                transition={{ duration: 0.7 }}
-                autoFocus={isOpen}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
                 className='absolute top-6 z-10 max-h-[1300px] min-h-80 w-full overflow-y-scroll rounded-b-3xl bg-white/80 backdrop-blur-md'
             >
                 {loading ? (
