@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import Carousel from '@/components/Carousel';
+import ImagesModal from '@/components/ImagesModal';
 import { useState } from 'react';
 
 type GalleryProps = {
@@ -8,20 +8,24 @@ type GalleryProps = {
 };
 
 export default function Gallery({ screenshots }: GalleryProps) {
-    const [showCarousel, setShowCarousel] = useState(false);
+    const [showModal, setShowModal] = useState<boolean>(false);
     const [index, setIndex] = useState<number>(0);
 
-    function handleOpenCarousel(index: number) {
+    function handleOpenModal(index: number) {
         setIndex(index);
-        setShowCarousel(true);
+        setShowModal(true);
     }
+    function handleCloseModal() {
+        setShowModal(false);
+    }
+
     return (
         <>
             <div className=' grid w-full grid-cols-2 gap-4 pt-4'>
                 {screenshots.slice(0, 3).map((screenshot, index) => (
                     <button
                         key={screenshot.id}
-                        onClick={() => handleOpenCarousel(index)}
+                        onClick={() => handleOpenModal(index)}
                         className=' aspect-video h-auto w-full overflow-hidden rounded-xl'
                     >
                         <Image
@@ -36,8 +40,8 @@ export default function Gallery({ screenshots }: GalleryProps) {
                 ))}
                 {screenshots.length > 4 && (
                     <button
-                        className='bg-brand-gray-dark flex aspect-video h-auto w-full items-center justify-center rounded-xl'
-                        onClick={() => handleOpenCarousel(3)}
+                        className='flex aspect-video h-auto w-full items-center justify-center rounded-xl bg-brand-gray-dark'
+                        onClick={() => handleOpenModal(3)}
                     >
                         <Image
                             src={screenshots[3].image}
@@ -50,13 +54,13 @@ export default function Gallery({ screenshots }: GalleryProps) {
                     </button>
                 )}
             </div>
-            {showCarousel && (
-                <Carousel
-                    images={screenshots}
-                    open={showCarousel}
-                    setShowCarousel={setShowCarousel}
+            {showModal && (
+                <ImagesModal
+                    open={showModal}
+                    onOpenChange={handleCloseModal}
                     index={index}
                     setIndex={setIndex}
+                    images={screenshots}
                 />
             )}
         </>

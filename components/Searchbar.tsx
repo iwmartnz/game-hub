@@ -59,7 +59,7 @@ export default function Searchbar() {
         <div
             ref={ref}
             tabIndex={0}
-            className='group/search relative flex h-12 w-full flex-1 gap-1'
+            className='group/search relative flex min-h-12 w-full flex-1 gap-1'
         >
             <div className=' relative z-20 flex h-full w-full items-center text-brand-gray-light focus-within:text-brand-black hover:text-brand-black'>
                 <input
@@ -68,7 +68,7 @@ export default function Searchbar() {
                     onChange={handleChange}
                     // onBlur={handleBlur}
                     placeholder='Search 864,398 games'
-                    className=' flex h-full flex-1 rounded-full border-2 border-transparent bg-brand-white/20 indent-10 text-sm font-medium shadow-sm outline-0 ring-0 backdrop-blur-sm duration-300 ease-in-out placeholder:text-brand-gray-light hover:bg-brand-white focus:bg-white group-focus/search:bg-brand-white'
+                    className=' flex h-12 flex-1 rounded-full border-2 border-transparent bg-brand-white/20 indent-10 text-sm font-medium shadow-sm shadow-black/15 outline-0 ring-0 backdrop-blur-sm duration-300 ease-in-out placeholder:text-brand-gray-light hover:bg-brand-white focus:bg-white group-focus/search:bg-brand-white'
                 />
                 <SearchIcon className='absolute left-3 pt-[3px]' size='18' />
             </div>

@@ -22,12 +22,12 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body
-                className={` ${urbanist.className} bg-brand-black text-brand-white `}
+                className={` ${urbanist.className} min-w-80 bg-brand-black text-brand-white `}
             >
                 <GameImageProvider>
                     <BackgroundImage />
                     <Header />
-                    <div className='flex gap-6 px-6'>
+                    <div className='flex gap-6 px-[3vw]'>
                         <Sidebar />
                         {children}
                     </div>
