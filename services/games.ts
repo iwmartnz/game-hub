@@ -49,28 +49,32 @@ export const getGamesbyTag = async (tag: string) => {
 };
 
 export const getGameDetails = async (id: string) => {
-    const res = await fetch(
-        `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
-    );
-    const gameData = await res.json();
-    return {
-        id: gameData.id,
-        name: gameData.name,
-        slug: gameData.slug,
-        image: gameData.background_image,
-        description: gameData.description,
-        platforms: gameData.platforms,
-        stores: gameData.stores,
-        tags: gameData.tags,
-        released: gameData.released,
-        playtime: gameData.playtime,
-        metacritic: gameData.metacritic,
-        genres: gameData.genres,
-        developers: gameData.developers,
-        esrb: gameData.esrb_rating,
-        rating: gameData.rating,
-        website: gameData.website,
-    };
+    try {
+        const res = await fetch(
+            `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
+        );
+        const gameData = await res.json();
+        return {
+            id: gameData.id,
+            name: gameData.name,
+            slug: gameData.slug,
+            image: gameData.background_image,
+            description: gameData.description,
+            platforms: gameData.platforms,
+            stores: gameData.stores,
+            tags: gameData.tags,
+            released: gameData.released,
+            playtime: gameData.playtime,
+            metacritic: gameData.metacritic,
+            genres: gameData.genres,
+            developers: gameData.developers,
+            esrb: gameData.esrb_rating,
+            rating: gameData.rating,
+            website: gameData.website,
+        };
+    } catch (error) {
+        return error;
+    }
 };
 
 export const getGameScreenshots = async (id: string) => {
@@ -98,7 +102,7 @@ export const getGamesByTitle = async (title: string) => {
             metacritic: game.metacritic,
         }));
     } catch (error) {
-        console.log(error);
+        return error;
     }
 };
 
