@@ -3,12 +3,15 @@ import Skeleton from './Skeleton';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Platforms from './Platforms';
+import { Platform } from '@/types';
 
 type Game = {
     id: number;
     slug: string;
     name: string;
     image: string;
+    platforms: Platform[];
 };
 
 type ModalProps = {
@@ -51,9 +54,9 @@ export default function GamesModal({
                             {games.map((game) => (
                                 <div
                                     key={game.id}
-                                    className='flex items-center gap-3'
+                                    className='flex items-center gap-2'
                                 >
-                                    <figure className=' aspect-square h-10 w-10 overflow-hidden rounded-md object-cover'>
+                                    <figure className=' aspect-square h-12 w-12 overflow-hidden rounded-xl object-cover'>
                                         {game.image && (
                                             <Image
                                                 src={game.image}
@@ -64,14 +67,21 @@ export default function GamesModal({
                                             />
                                         )}
                                     </figure>
-
-                                    <Link
-                                        href={`/games/${game.slug}`}
-                                        onClick={closeModal}
-                                        className='font-medium text-brand-black'
-                                    >
-                                        {game.name}
-                                    </Link>
+                                    <div className=' flex h-full flex-col justify-center'>
+                                        <Platforms
+                                            platforms={game.platforms}
+                                            iconColor='dark'
+                                            iconSize='xs'
+                                            className='h-auto'
+                                        />
+                                        <Link
+                                            href={`/games/${game.slug}`}
+                                            onClick={closeModal}
+                                            className=' font-bold text-brand-black'
+                                        >
+                                            {game.name}
+                                        </Link>
+                                    </div>
                                 </div>
                             ))}
                         </ul>

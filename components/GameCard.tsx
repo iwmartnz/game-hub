@@ -30,16 +30,20 @@ export default function GameCard({ game }: GameCardProps) {
                     className='relative h-full w-full object-cover'
                 />
             </figure>
-            <div className='from-brand-black via-brand-black/70 to-brand-black/0 absolute bottom-0 min-h-2 w-full bg-gradient-to-t p-4'>
+            <div className='absolute bottom-0 min-h-2 w-full bg-gradient-to-t from-brand-black via-brand-black/70 to-brand-black/0 p-4'>
                 <div className=' flex items-start justify-between'>
-                    <Platforms platforms={platforms} />
+                    <Platforms
+                        platforms={platforms}
+                        iconColor='light'
+                        iconSize='sm'
+                    />
                     {metacritic && (
                         <span className=' flex h-6 w-8 items-center justify-center rounded-md border-[1px] border-green-400 text-base text-green-400 drop-shadow-md'>
                             {metacritic}
                         </span>
                     )}
                 </div>
-                <div className=' text-brand-white text-lg font-medium drop-shadow-md md:text-xl'>
+                <div className=' text-lg font-medium text-brand-white drop-shadow-md md:text-xl'>
                     {name}
                 </div>
             </div>

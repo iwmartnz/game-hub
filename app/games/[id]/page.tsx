@@ -29,7 +29,7 @@ export async function generateMetadata({
     const id = params.id;
 
     // fetch data
-    const game = await getGameDetails(id);
+    const game: any = await getGameDetails(id);
 
     return {
         title: `${game.name} | Game Hub`,
@@ -40,11 +40,14 @@ export async function generateMetadata({
 export default async function GamePage({ params }: PageProps) {
     const game: Game = await getGameDetails(params.id);
     const screenshots: Screenshot[] = await getGameScreenshots(params.id);
-
     return (
         <main className='flex flex-col gap-4 overflow-hidden pt-6 lg:flex-row'>
             <div className='lg:w-7/12'>
-                <Platforms platforms={game.platforms} iconSize={16} />
+                <Platforms
+                    platforms={game.platforms}
+                    iconColor='light'
+                    iconSize='sm'
+                />
                 <Heading type='heading'>{game?.name}</Heading>
                 <Heading type='subheading' className='pb-2 pt-4'>
                     About

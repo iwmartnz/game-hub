@@ -15,8 +15,9 @@ export default function BackgroundImage() {
                         alt=''
                         width={900}
                         height={640}
+                        priority
                     />
-                    <div className='from-brand-black to-brand-black/0 absolute left-0 top-[20rem] h-[20rem] w-full bg-gradient-to-t' />
+                    <div className='absolute left-0 top-[20rem] h-[20rem] w-full bg-gradient-to-t from-brand-black to-brand-black/0' />
                 </figure>
             )}
         </>
