@@ -4,8 +4,8 @@ import playstation from '@/assets/playstation.svg';
 import pc from '@/assets/pc.svg';
 import mac from '@/assets/mac.svg';
 // import linux from '@/assets//linux.webp';
-// import android from '@/assets//android.webp';
-// import iOS from '@/assets//iOS.webp';
+import android from '@/assets/android.svg';
+import iOS from '@/assets/ios.svg';
 
 import type { Platform } from '@/types/index';
 
