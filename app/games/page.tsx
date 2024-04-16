@@ -12,7 +12,7 @@ export default async function GamesPage() {
     const games: Game[] = await getAllGames();
     return (
         <main className='w-full space-y-2'>
-            <Heading type='heading'>All Games</Heading>
+            <Heading variant='heading'>All Games</Heading>
             <Suspense fallback={<Skeleton variant='grid' />}>
                 <Grid className='py-6'>
                     {games.map((game) => (

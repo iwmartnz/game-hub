@@ -12,7 +12,7 @@ export default async function Home() {
     const games: Game[] = await getGamesbyTag('multiplayer');
     return (
         <main className='w-full space-y-2'>
-            <Heading type='heading'>New and trending</Heading>
+            <Heading variant='heading'>New and trending</Heading>
             <p className=''>Based on player counts and release date</p>
             <Suspense fallback={<Skeleton variant='grid' />}>
                 <Grid className='py-6'>

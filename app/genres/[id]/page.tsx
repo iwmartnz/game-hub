@@ -34,7 +34,7 @@ export default async function GenrePage({ params }: PageProps) {
 
     return (
         <main className='w-full space-y-2'>
-            <Heading type='heading'>{genre?.name}</Heading>
+            <Heading variant='heading'>{genre?.name}</Heading>
             <div className=' text-brand-gray-light'>
                 {genre?.description && parse(genre?.description)}
             </div>

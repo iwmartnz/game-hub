@@ -15,11 +15,11 @@ export default async function Sidebar() {
         <aside className='hidden min-h-screen min-w-60 flex-col lg:flex'>
             <div className='pb-2 pt-12'>
                 <Link href='/games'>
-                    <Heading type='subheading'>All Games</Heading>
+                    <Heading variant='subheading'>All Games</Heading>
                 </Link>
             </div>
 
-            <Heading type='subheading' className='pb-2 pt-4'>
+            <Heading variant='subheading' className='pb-2 pt-4'>
                 Genres
             </Heading>
             <Suspense fallback={<Skeleton variant='list' />}>
