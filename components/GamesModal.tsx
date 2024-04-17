@@ -75,7 +75,7 @@ export default function GamesModal({
                                                 <Platforms
                                                     platforms={game.platforms}
                                                     iconColor='dark'
-                                                    iconSize='xs'
+                                                    iconSize='14px'
                                                     className='h-auto'
                                                 />
                                             )}

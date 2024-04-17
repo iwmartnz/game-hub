@@ -1,18 +1,17 @@
 import { cn } from '@/utils/style';
 
 type IconProps = {
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    color?: string;
+    size?: string;
     className?: string;
     variant?: string;
 };
 
-export function LoadingIcon({ color = 'currentColor', className }: IconProps) {
+export function LoadingIcon({ size = '16px' }: IconProps) {
     return (
-        <div className={cn('h-6 w-auto animate-spin', className)}>
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 24 24'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -20,43 +19,29 @@ export function LoadingIcon({ color = 'currentColor', className }: IconProps) {
                 <path
                     opacity='0.4'
                     d='M22 12C22 6.47715 17.5228 2 12 2'
-                    stroke={color}
+                    stroke='currentColor'
                     strokeWidth='1.5'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                 />
                 <path
                     d='M22 11.9996C22 17.5225 17.5228 21.9996 12 21.9996C6.47715 21.9996 2 17.5225 2 11.9996C2 10.4031 2.37412 8.89402 3.03947 7.55518'
-                    stroke={color}
+                    stroke='currentColor'
                     strokeWidth='1.5'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function SearchIcon({
-    color = 'currentColor',
-    size,
-    className,
-}: IconProps) {
+export function SearchIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-5',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 24 24'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -64,28 +49,28 @@ export function SearchIcon({
                 <path
                     opacity='0.4'
                     d='M17.5 17.5L21 21'
-                    stroke={color}
-                    strokeWidth='1.5'
+                    stroke='currentColor'
+                    strokeWidth='2'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                 />
                 <path
                     d='M20 11C20 15.9706 15.9706 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11Z'
-                    stroke={color}
+                    stroke='currentColor'
                     strokeWidth='2'
                     strokeLinecap='round'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function ExternalIcon({ className }: IconProps) {
+export function ExternalIcon({ size = '16px' }: IconProps) {
     return (
-        <div className={cn('h-4 w-auto', className)}>
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 24 24'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -106,16 +91,16 @@ export function ExternalIcon({ className }: IconProps) {
                     strokeLinejoin='round'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function CloseIcon({ color = 'currentColor', className }: IconProps) {
+export function CloseIcon({ size = '16px' }: IconProps) {
     return (
-        <div className={cn('h-6 w-6', className)}>
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 24 24'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -123,29 +108,29 @@ export function CloseIcon({ color = 'currentColor', className }: IconProps) {
                 <path
                     opacity='0.4'
                     d='M6 18L8 16M18 6L16 8M6 6L8 8M18 18L16 16'
-                    stroke={color}
+                    stroke='currentColor'
                     strokeWidth='2'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                 />
                 <path
                     d='M8 16L16 8M8 8L12 12L16 16'
-                    stroke={color}
+                    stroke='currentColor'
                     strokeWidth='2'
                     strokeLinecap='round'
                     strokeLinejoin='round'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function ChevronLeftIcon({ className }: IconProps) {
+export function ChevronLeftIcon({ size = '16px' }: IconProps) {
     return (
-        <div className={cn('h-6 w-6', className)}>
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 24 24'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -166,16 +151,16 @@ export function ChevronLeftIcon({ className }: IconProps) {
                     strokeLinejoin='round'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function ChevronRightIcon({ className }: IconProps) {
+export function ChevronRightIcon({ size = '16px' }: IconProps) {
     return (
-        <div className={cn('h-6 w-6', className)}>
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 24 24'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'
@@ -196,26 +181,16 @@ export function ChevronRightIcon({ className }: IconProps) {
                     strokeLinejoin='round'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function PcIcon({ className, size }: IconProps) {
+export function PcIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 16 16'
                 xmlns='http://www.w3.org/2000/svg'
             >
@@ -224,26 +199,16 @@ export function PcIcon({ className, size }: IconProps) {
                     fill='currentColor'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function PlaystationIcon({ className, size }: IconProps) {
+export function PlaystationIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 21 16'
                 xmlns='http://www.w3.org/2000/svg'
             >
@@ -252,25 +217,15 @@ export function PlaystationIcon({ className, size }: IconProps) {
                     fill='currentColor'
                 />
             </svg>
-        </div>
+        </>
     );
 }
-export function XboxIcon({ className, size }: IconProps) {
+export function XboxIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 16 16'
             >
@@ -279,26 +234,16 @@ export function XboxIcon({ className, size }: IconProps) {
                     d='M3.564 1.357l-.022.02c.046-.048.11-.1.154-.128C4.948.435 6.396 0 8 0c1.502 0 2.908.415 4.11 1.136.086.052.324.215.446.363C11.4.222 7.993 2.962 7.993 2.962c-1.177-.908-2.26-1.526-3.067-1.746-.674-.185-1.14-.03-1.362.141zm10.305 1.208c-.035-.04-.074-.076-.109-.116-.293-.322-.653-.4-.978-.378-.295.092-1.66.584-3.342 2.172 0 0 1.894 1.841 3.053 3.723 1.159 1.883 1.852 3.362 1.426 5.415A7.969 7.969 0 0016 7.999a7.968 7.968 0 00-2.13-5.434zM10.98 8.77a55.416 55.416 0 00-2.287-2.405 52.84 52.84 0 00-.7-.686l-.848.854c-.614.62-1.411 1.43-1.853 1.902-.787.84-3.043 3.479-3.17 4.958 0 0-.502-1.174.6-3.88.72-1.769 2.893-4.425 3.801-5.29 0 0-.83-.913-1.87-1.544l-.007-.002s-.011-.009-.03-.02c-.5-.3-1.047-.53-1.573-.56a1.391 1.391 0 00-.878.431A8 8 0 0013.92 13.381c0-.002-.169-1.056-1.245-2.57-.253-.354-1.178-1.46-1.696-2.04z'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function NintendoIcon({ className, size }: IconProps) {
+export function NintendoIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 21 16'
             >
@@ -308,29 +253,19 @@ export function NintendoIcon({ className, size }: IconProps) {
                     d='M8 0h5a8 8 0 110 16H8A8 8 0 118 0zm-.135 1.935a6.065 6.065 0 000 12.13h5.12a6.065 6.065 0 000-12.13h-5.12zm-1.33 2.304h2.401l3.199 5.175V4.24h2.346v7.495H12.18L8.864 6.537v5.201H6.53l.005-7.499z'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function AndroidIcon({ className, size }: IconProps) {
+export function AndroidIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
                 xmlns='http://www.w3.org/2000/svg'
                 x='0px'
                 y='0px'
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 30 30'
             >
                 <path
@@ -338,29 +273,19 @@ export function AndroidIcon({ className, size }: IconProps) {
                     d='M 9.6777344 1.515625 A 0.50005 0.50005 0 0 0 9.28125 2.3046875 L 10.759766 4.4414062 C 9.3401698 5.5292967 8.3458783 7.145415 8.0800781 9 L 21.919922 9 C 21.654122 7.145415 20.65983 5.5292967 19.240234 4.4414062 L 20.71875 2.3046875 A 0.50005 0.50005 0 0 0 20.306641 1.515625 A 0.50005 0.50005 0 0 0 19.896484 1.7363281 L 18.40625 3.8925781 C 17.398252 3.3277312 16.238794 3 15 3 C 13.761206 3 12.601748 3.3277312 11.59375 3.8925781 L 10.103516 1.7363281 A 0.50005 0.50005 0 0 0 9.6777344 1.515625 z M 12 5 C 12.552 5 13 5.448 13 6 C 13 6.552 12.552 7 12 7 C 11.448 7 11 6.552 11 6 C 11 5.448 11.448 5 12 5 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 5 11 C 4.448 11 4 11.448 4 12 L 4 20 C 4 20.552 4.448 21 5 21 C 5.552 21 6 20.552 6 20 L 6 12 C 6 11.448 5.552 11 5 11 z M 8 11 L 8 21 C 8 22.105 8.895 23 10 23 L 10 26.5 C 10 27.328 10.672 28 11.5 28 C 12.328 28 13 27.328 13 26.5 L 13 23 L 17 23 L 17 26.5 C 17 27.328 17.672 28 18.5 28 C 19.328 28 20 27.328 20 26.5 L 20 23 C 21.105 23 22 22.105 22 21 L 22 11 L 8 11 z M 25 11 C 24.448 11 24 11.448 24 12 L 24 20 C 24 20.552 24.448 21 25 21 C 25.552 21 26 20.552 26 20 L 26 12 C 26 11.448 25.552 11 25 11 z'
                 ></path>
             </svg>
-        </div>
+        </>
     );
 }
 
-export function IosIcon({ className, size }: IconProps) {
+export function IosIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
                 xmlns='http://www.w3.org/2000/svg'
                 x='0px'
                 y='0px'
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 viewBox='0 0 50 50'
             >
                 <path
@@ -368,26 +293,16 @@ export function IosIcon({ className, size }: IconProps) {
                     d='M 16 3 C 9.38 3 4 8.38 4 15 L 4 35 C 4 41.62 9.38 47 16 47 L 36 47 C 42.62 47 48 41.62 48 35 L 48 15 C 48 8.38 42.62 3 36 3 L 16 3 z M 12.619141 18.070312 C 13.319141 18.070312 13.839844 18.570469 13.839844 19.230469 C 13.839844 19.880469 13.319141 20.380859 12.619141 20.380859 C 11.909141 20.380859 11.390625 19.880469 11.390625 19.230469 C 11.390625 18.570469 11.909141 18.070312 12.619141 18.070312 z M 23.039062 18.640625 C 26.689062 18.640625 28.939453 21.189297 28.939453 25.279297 C 28.939453 29.359297 26.709062 31.929688 23.039062 31.929688 C 19.349062 31.929688 17.109375 29.369297 17.109375 25.279297 C 17.109375 21.179297 19.399062 18.640625 23.039062 18.640625 z M 35.970703 18.640625 C 38.540703 18.640625 40.419062 20.139297 40.539062 22.279297 L 38.619141 22.279297 C 38.429141 21.109297 37.419453 20.380859 35.939453 20.380859 C 34.379453 20.380859 33.349609 21.119531 33.349609 22.269531 C 33.349609 23.169531 34.009922 23.690078 35.669922 24.080078 L 37.060547 24.419922 C 39.670547 25.029922 40.740234 26.080234 40.740234 27.990234 C 40.740234 30.420234 38.859609 31.939453 35.849609 31.939453 C 33.039609 31.939453 31.149766 30.490703 31.009766 28.220703 L 32.960938 28.220703 C 33.130938 29.420703 34.31 30.189453 36 30.189453 C 37.58 30.189453 38.740234 29.370234 38.740234 28.240234 C 38.740234 27.280234 38.010078 26.700781 36.330078 26.300781 L 34.689453 25.910156 C 32.399453 25.370156 31.349609 24.260391 31.349609 22.400391 C 31.349609 20.140391 33.200703 18.640625 35.970703 18.640625 z M 23.039062 20.470703 C 20.649062 20.470703 19.130859 22.339297 19.130859 25.279297 C 19.130859 28.209297 20.599062 30.099609 23.039062 30.099609 C 25.449062 30.099609 26.929688 28.209297 26.929688 25.279297 C 26.929688 22.339297 25.449063 20.470703 23.039062 20.470703 z M 11.679688 22.060547 L 13.560547 22.060547 L 13.560547 31.630859 L 11.679688 31.630859 L 11.679688 22.060547 z'
                 ></path>
             </svg>
-        </div>
+        </>
     );
 }
 
-export function MacIcon({ className, size }: IconProps) {
+export function MacIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
-                width='100%'
-                height='100%'
+                width={size}
+                height={size}
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 15 18'
             >
@@ -396,27 +311,17 @@ export function MacIcon({ className, size }: IconProps) {
                     fill='currentColor'
                 />
             </svg>
-        </div>
+        </>
     );
 }
 
-export function LinuxIcon({ className, size = 'sm' }: IconProps) {
+export function LinuxIcon({ size = '16px' }: IconProps) {
     return (
-        <div
-            className={cn(
-                'h-6 w-auto',
-                size === 'xs' && 'h-3',
-                size === 'sm' && 'h-4',
-                size === 'md' && 'h-6',
-                size === 'lg' && 'h-8',
-                size === 'xl' && 'h-10',
-                className
-            )}
-        >
+        <>
             <svg
                 fill='currentColor'
-                height='100%'
-                width='100%'
+                height={size}
+                width={size}
                 version='1.1'
                 id='Layer_1'
                 xmlns='http://www.w3.org/2000/svg'
@@ -470,6 +375,6 @@ export function LinuxIcon({ className, size = 'sm' }: IconProps) {
                     />
                 </g>
             </svg>
-        </div>
+        </>
     );
 }

@@ -35,7 +35,7 @@ export default function GameCard({ game }: GameCardProps) {
                     <Platforms
                         platforms={platforms}
                         iconColor='light'
-                        iconSize='sm'
+                        iconSize='16px'
                     />
                     {metacritic && (
                         <span className=' flex h-6 w-8 items-center justify-center rounded-md border-[1px] border-green-400 text-base text-green-400 drop-shadow-md'>

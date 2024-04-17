@@ -15,7 +15,7 @@ import { cn } from '@/utils/style';
 
 type PlatformProps = {
     platforms: Platform[];
-    iconSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    iconSize: string;
     iconColor: 'light' | 'dark';
     className?: string;
 };

@@ -63,21 +63,21 @@ export default function Carousel({
                                 disabled={index === 0}
                                 className='rounded-full  bg-white p-1 text-brand-black shadow-sm shadow-black/15 backdrop-blur-sm disabled:opacity-20'
                             >
-                                <ChevronLeftIcon className='h-8 w-8' />
+                                <ChevronLeftIcon size='28px' />
                             </button>
                             <button
                                 onClick={increment}
                                 disabled={index >= images.length - 1}
                                 className='rounded-full  bg-white p-1 text-brand-black  shadow-sm shadow-black/20 backdrop-blur-sm disabled:opacity-20'
                             >
-                                <ChevronRightIcon className='h-8 w-8' />
+                                <ChevronRightIcon size='28px' />
                             </button>
                         </div>
                         <button
                             onClick={onOpenChange}
                             className='absolute right-5 top-5 rounded-full bg-white p-1 text-brand-black shadow-sm shadow-black/20 duration-300 hover:scale-110'
                         >
-                            <CloseIcon className='h-6 w-6' />
+                            <CloseIcon size='20px' />
                         </button>
                     </motion.div>
                 </Dialog.Content>

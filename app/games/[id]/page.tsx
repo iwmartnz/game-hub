@@ -50,7 +50,7 @@ export default async function GamePage({ params }: PageProps) {
                 <Platforms
                     platforms={game.platforms}
                     iconColor='light'
-                    iconSize='sm'
+                    iconSize='18px'
                 />
                 <Heading variant='heading'>{game?.name}</Heading>
                 <Heading variant='subheading' className='pb-2 pt-4'>
