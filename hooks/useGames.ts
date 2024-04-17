@@ -5,7 +5,7 @@ import { useMemo, useState, useRef, ChangeEvent } from 'react';
 export function useGames({ search }: { search: string }) {
     const [games, setGames] = useState<Game[] | []>([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<null | string>('');
+    const [error, setError] = useState<boolean>(false);
     const [isFirstSearch, setIsFirstSearch] = useState(false);
     const previousSearch = useRef(search);
 
@@ -15,13 +15,14 @@ export function useGames({ search }: { search: string }) {
 
             try {
                 setLoading(true);
-                setError(null);
+                setError(false);
                 setIsFirstSearch(true);
                 previousSearch.current = search;
                 const newGames = await getGamesByTitle(search);
                 setGames(newGames);
             } catch (e: any) {
-                throw new Error(e.message);
+                setError(true);
+                console.log(e);
             } finally {
                 setLoading(false);
             }
@@ -32,5 +33,5 @@ export function useGames({ search }: { search: string }) {
         setGames([]);
     };
 
-    return { games, loading, getGames, removeGames };
+    return { games, loading, error, getGames, removeGames };
 }

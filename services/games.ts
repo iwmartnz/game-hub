@@ -78,12 +78,15 @@ export const getGameDetails = async (id: string) => {
 };
 
 export const getGameScreenshots = async (id: string) => {
-    const res = await fetch(
-        `https://api.rawg.io/api/games/${id}/screenshots?key=${API_KEY}`
-    );
-    const data = await res.json();
-
-    return data.results;
+    try {
+        const res = await fetch(
+            `https://api.rawg.io/api/games/${id}/screenshots?key=${API_KEY}`
+        );
+        const data = await res.json();
+        return data.results;
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 export const getGamesByTitle = async (title: string) => {
