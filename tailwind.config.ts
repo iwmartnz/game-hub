@@ -16,7 +16,7 @@ const config: Config = {
                     neutral: '#4a4a4a',
                     dark: '#2a2a2a',
                 },
-                'brand-accent': '#ff7421',
+                'brand-accent': '#64f5b7',
             },
         },
     },
