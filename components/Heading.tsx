@@ -4,41 +4,40 @@ import { ReactNode } from 'react';
 type HeadingProps = {
     children: string | ReactNode;
     className?: string;
-    type: 'heading' | 'subheading' | 'meta';
+    variant: 'heading' | 'subheading' | 'meta';
     subHeading?: boolean;
     metaHeading?: boolean;
 };
 
-export default function Heading({ children, className, type }: HeadingProps) {
+export default function Heading({
+    children,
+    className,
+    variant,
+}: HeadingProps) {
     return (
         <>
-            {type == 'heading' && (
+            {variant == 'heading' && (
                 <h1
                     className={cn(
-                        ' text-brand-white text-4xl font-semibold lg:text-7xl',
+                        ' text-4xl font-semibold text-brand-white lg:text-7xl',
                         className
                     )}
                 >
                     {children}
                 </h1>
             )}
-            {type == 'subheading' && (
+            {variant == 'subheading' && (
                 <h2
                     className={cn(
-                        'text-brand-white  text-xl font-bold lg:text-2xl',
+                        'text-xl  font-bold text-brand-white lg:text-2xl',
                         className
                     )}
                 >
                     {children}
                 </h2>
             )}
-            {type == 'meta' && (
-                <h2
-                    className={cn(
-                        'text-brand-white  text-xl font-bold lg:text-2xl',
-                        className
-                    )}
-                >
+            {variant == 'meta' && (
+                <h2 className={cn('  font-medium text-white/30', className)}>
                     {children}
                 </h2>
             )}

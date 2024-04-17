@@ -23,8 +23,10 @@ type Game = {
 };
 
 export default function Searchbar() {
-    const { search, updateSearch, error } = useSearch();
-    const { games, getGames, loading, removeGames } = useGames({ search });
+    const { search, updateSearch } = useSearch();
+    const { games, getGames, loading, error, removeGames } = useGames({
+        search,
+    });
     const [isOpen, setIsOpen] = useState(false);
     const ref = useOutsideClick(closeModal);
 
@@ -70,7 +72,7 @@ export default function Searchbar() {
                     placeholder='Search 864,398 games'
                     className=' flex h-12 flex-1 rounded-full border-2 border-transparent bg-brand-white/20 indent-10 text-sm font-medium shadow-sm shadow-black/15 outline-0 ring-0 backdrop-blur-sm duration-300 ease-in-out placeholder:text-brand-gray-light hover:bg-brand-white focus:bg-white group-focus/search:bg-brand-white'
                 />
-                <SearchIcon className='absolute left-3 pt-[3px]' size='18' />
+                <SearchIcon className='absolute left-3' size='md' />
             </div>
             <AnimatePresence>
                 {isOpen && (
@@ -78,6 +80,7 @@ export default function Searchbar() {
                         isOpen={isOpen}
                         setIsOpen={setIsOpen}
                         loading={loading}
+                        error={error}
                         games={games}
                     />
                 )}

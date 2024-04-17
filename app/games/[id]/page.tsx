@@ -1,10 +1,14 @@
 import { Suspense } from 'react';
+import Link from 'next/link';
+
 import Description from '@/components/Description';
 import Gallery from '@/components/Gallery';
 import Heading from '@/components/Heading';
 import Platforms from '@/components/Platforms';
 import GameImage from '@/components/GameImage';
 import Skeleton from '@/components/Skeleton';
+import Meta from '@/components/Meta';
+import { ExternalIcon } from '@/components/Icon';
 
 import { getGameDetails, getGameScreenshots } from '@/services/games';
 import { Game } from '@/types';
@@ -48,16 +52,26 @@ export default async function GamePage({ params }: PageProps) {
                     iconColor='light'
                     iconSize='sm'
                 />
-                <Heading type='heading'>{game?.name}</Heading>
-                <Heading type='subheading' className='pb-2 pt-4'>
+                <Heading variant='heading'>{game?.name}</Heading>
+                <Heading variant='subheading' className='pb-2 pt-4'>
                     About
                 </Heading>
                 <Description rawDescription={game.description} />
+                <Meta game={game} />
             </div>
             <div className=' lg:w-5/12'>
                 <Suspense fallback={<Skeleton variant='gallery' />}>
                     <GameImage image={game.image} />
-                    <Gallery screenshots={screenshots} />
+                    {screenshots && <Gallery screenshots={screenshots} />}
+                    {game.website && (
+                        <Link
+                            target='_blank'
+                            className='mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-white font-semibold text-brand-black'
+                            href={game.website}
+                        >
+                            Website <ExternalIcon />
+                        </Link>
+                    )}
                 </Suspense>
             </div>
         </main>

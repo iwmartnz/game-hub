@@ -18,12 +18,14 @@ type ModalProps = {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     loading: boolean;
+    error: boolean;
     games: Game[] | [];
 };
 export default function GamesModal({
     isOpen,
     setIsOpen,
     loading,
+    error,
     games,
 }: ModalProps) {
     const closeModal = () => {
@@ -48,44 +50,55 @@ export default function GamesModal({
                     <div className=' px-4 pb-4 pt-12'>
                         <Skeleton variant='list' />
                     </div>
-                ) : (
-                    games && (
-                        <ul className=' flex flex-col gap-4 px-4 pb-4 pt-12 '>
-                            {games.map((game) => (
-                                <div
-                                    key={game.id}
-                                    className='flex items-center gap-2'
-                                >
-                                    <figure className=' aspect-square h-12 w-12 overflow-hidden rounded-xl object-cover'>
-                                        {game.image && (
-                                            <Image
-                                                src={game.image}
-                                                alt={game.name}
-                                                width={40}
-                                                height={40}
-                                                className=' h-full w-full object-cover'
-                                            />
-                                        )}
-                                    </figure>
-                                    <div className=' flex h-full flex-col justify-center'>
-                                        <Platforms
-                                            platforms={game.platforms}
-                                            iconColor='dark'
-                                            iconSize='xs'
-                                            className='h-auto'
-                                        />
-                                        <Link
-                                            href={`/games/${game.slug}`}
-                                            onClick={closeModal}
-                                            className=' font-bold text-brand-black'
-                                        >
-                                            {game.name}
-                                        </Link>
+                ) : games.length > 0 ? (
+                    <ul className=' flex flex-col gap-4 px-4 pb-4 pt-12 '>
+                        {games.map(
+                            (game) =>
+                                game.image && (
+                                    <div
+                                        key={game.id}
+                                        className='flex items-center gap-2'
+                                    >
+                                        <figure className=' aspect-square h-12 w-12 overflow-hidden rounded-xl object-cover'>
+                                            {game.image && (
+                                                <Image
+                                                    src={game.image}
+                                                    alt={game.name}
+                                                    width={40}
+                                                    height={40}
+                                                    className=' h-full w-full object-cover'
+                                                />
+                                            )}
+                                        </figure>
+                                        <div className=' flex h-full flex-col justify-center'>
+                                            {game.platforms && (
+                                                <Platforms
+                                                    platforms={game.platforms}
+                                                    iconColor='dark'
+                                                    iconSize='xs'
+                                                    className='h-auto'
+                                                />
+                                            )}
+                                            <Link
+                                                href={`/games/${game.slug}`}
+                                                onClick={closeModal}
+                                                className=' font-bold text-brand-black'
+                                            >
+                                                {game.name}
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                        </ul>
-                    )
+                                )
+                        )}
+                    </ul>
+                ) : (
+                    <>
+                        {error ? (
+                            <div>Failed to load games</div>
+                        ) : (
+                            <div>No games found</div>
+                        )}
+                    </>
                 )}
             </motion.div>
         </>
