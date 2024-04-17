@@ -1,7 +1,6 @@
 import { Developer, Esrb, Genre, Platform, Tag } from '@/types';
 import React from 'react';
 import Heading from './Heading';
-import { cn } from '@/utils/style';
 
 type MetaDataProps = {
     game: {
