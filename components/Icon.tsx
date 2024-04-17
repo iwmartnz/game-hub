@@ -37,9 +37,23 @@ export function LoadingIcon({ color = 'currentColor', className }: IconProps) {
     );
 }
 
-export function SearchIcon({ color = 'currentColor', className }: IconProps) {
+export function SearchIcon({
+    color = 'currentColor',
+    size,
+    className,
+}: IconProps) {
     return (
-        <div className={cn('h-6 w-auto', className)}>
+        <div
+            className={cn(
+                'h-6 w-auto',
+                size === 'xs' && 'h-3',
+                size === 'sm' && 'h-4',
+                size === 'md' && 'h-5',
+                size === 'lg' && 'h-8',
+                size === 'xl' && 'h-10',
+                className
+            )}
+        >
             <svg
                 width='100%'
                 height='100%'
@@ -60,6 +74,36 @@ export function SearchIcon({ color = 'currentColor', className }: IconProps) {
                     stroke={color}
                     strokeWidth='2'
                     strokeLinecap='round'
+                />
+            </svg>
+        </div>
+    );
+}
+
+export function ExternalIcon({ className }: IconProps) {
+    return (
+        <div className={cn('h-4 w-auto', className)}>
+            <svg
+                width='100%'
+                height='100%'
+                viewBox='0 0 24 24'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+            >
+                <path
+                    opacity='0.4'
+                    d='M12 12L21 3M21 3H15M21 3V9'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                />
+                <path
+                    d='M10 3H9.5V3C8.10547 3 7.40821 3 6.83277 3.13815C5.00453 3.57707 3.57707 5.00453 3.13815 6.83277C3 7.40821 3 8.10547 3 9.5V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H14.5C15.8945 21 16.5918 21 17.1672 20.8618C18.9955 20.4229 20.4229 18.9955 20.8618 17.1672C21 16.5918 21 15.8945 21 14.5V14.5V14'
+                    stroke='currentColor'
+                    strokeWidth='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                 />
             </svg>
         </div>
