@@ -29,7 +29,7 @@ export default function Button({
                     target={target}
                     disabled={disabled}
                     className={cn(
-                        ' border-[1px] border-white/10 bg-black/20 text-brand-white  shadow-sm shadow-black/15 outline-0 ring-0 backdrop-blur-sm duration-300 hover:scale-110 disabled:opacity-20',
+                        ' border-[1px] border-white/10 bg-black/20 text-brand-white  shadow-sm shadow-black/15 backdrop-blur-sm duration-300 hover:scale-110 disabled:opacity-20',
                         className
                     )}
                 >
@@ -40,7 +40,7 @@ export default function Button({
                     onClick={onClick}
                     disabled={disabled}
                     className={cn(
-                        ' border-[1px] border-white/10 bg-black/20 text-brand-white shadow-sm  shadow-black/15 outline-0 ring-0 backdrop-blur-sm duration-300 hover:scale-110 hover:text-brand-accent disabled:opacity-20',
+                        ' border-[1px] border-white/10 bg-black/20 text-brand-white shadow-sm  shadow-black/15 backdrop-blur-sm duration-300 hover:scale-110 hover:text-brand-accent disabled:opacity-20',
                         className
                     )}
                 >
