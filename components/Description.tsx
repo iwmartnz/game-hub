@@ -10,7 +10,7 @@ type GameDescriptionProps = {
 export default function Description({ rawDescription }: GameDescriptionProps) {
     const [showFullDescription, setShowFullDescription] = useState(false);
     const description: any = parse(rawDescription);
-    const isLargeDescription = rawDescription.length > 1200;
+    const isLargeDescription = rawDescription.length > 1000;
 
     function toggleDescription() {
         setShowFullDescription((prevState) => !prevState);

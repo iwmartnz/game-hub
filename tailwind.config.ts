@@ -17,6 +17,7 @@ const config: Config = {
                     dark: '#2a2a2a',
                 },
                 'brand-accent': '#64f5b7',
+                'brand-base': '#151515',
             },
         },
     },

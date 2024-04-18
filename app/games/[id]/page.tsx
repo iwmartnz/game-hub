@@ -8,6 +8,7 @@ import Platforms from '@/components/Platforms';
 import GameImage from '@/components/GameImage';
 import Skeleton from '@/components/Skeleton';
 import Meta from '@/components/Meta';
+import Button from '@/components/Button';
 import { ExternalIcon } from '@/components/Icon';
 
 import { getGameDetails, getGameScreenshots } from '@/services/games';
@@ -47,11 +48,13 @@ export default async function GamePage({ params }: PageProps) {
     return (
         <main className='flex flex-col gap-4 overflow-hidden pt-6 lg:flex-row'>
             <div className='lg:w-7/12'>
-                <Platforms
-                    platforms={game.platforms}
-                    iconColor='light'
-                    iconSize='18px'
-                />
+                {game.platforms.length > 0 && (
+                    <Platforms
+                        platforms={game.platforms}
+                        iconColor='light'
+                        iconSize='18px'
+                    />
+                )}
                 <Heading variant='heading'>{game?.name}</Heading>
                 <Heading variant='subheading' className='pb-2 pt-4'>
                     About
@@ -62,15 +65,18 @@ export default async function GamePage({ params }: PageProps) {
             <div className=' lg:w-5/12'>
                 <Suspense fallback={<Skeleton variant='gallery' />}>
                     <GameImage image={game.image} />
-                    {screenshots && <Gallery screenshots={screenshots} />}
+                    {screenshots.length > 0 && (
+                        <Gallery screenshots={screenshots} />
+                    )}
                     {game.website && (
-                        <Link
+                        <Button
+                            className='mt-6 flex h-12 w-full items-center justify-center gap-1 rounded-full hover:scale-100 hover:text-brand-accent'
+                            link
                             target='_blank'
-                            className='mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-white font-semibold text-brand-black'
                             href={game.website}
                         >
                             Website <ExternalIcon />
-                        </Link>
+                        </Button>
                     )}
                 </Suspense>
             </div>

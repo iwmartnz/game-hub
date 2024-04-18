@@ -44,7 +44,7 @@ export default function GamesModal({
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className='absolute top-6 z-10 max-h-[1300px] min-h-80 w-full overflow-y-scroll rounded-b-3xl bg-white/80 backdrop-blur-md'
+                className='bg-brand-base/90 absolute top-6 z-10 max-h-[1300px] min-h-80 w-full overflow-y-scroll rounded-b-3xl border-[1px] border-white/10 backdrop-blur-md'
             >
                 {loading ? (
                     <div className=' px-4 pb-4 pt-12'>
@@ -74,7 +74,7 @@ export default function GamesModal({
                                             {game.platforms && (
                                                 <Platforms
                                                     platforms={game.platforms}
-                                                    iconColor='dark'
+                                                    iconColor='light'
                                                     iconSize='14px'
                                                     className='h-auto'
                                                 />
@@ -82,7 +82,7 @@ export default function GamesModal({
                                             <Link
                                                 href={`/games/${game.slug}`}
                                                 onClick={closeModal}
-                                                className=' font-bold text-brand-black'
+                                                className=' font-bold '
                                             >
                                                 {game.name}
                                             </Link>
@@ -94,9 +94,9 @@ export default function GamesModal({
                 ) : (
                     <>
                         {error ? (
-                            <div>Failed to load games</div>
+                            <div className='pt-10'>Failed to load games</div>
                         ) : (
-                            <div>No games found</div>
+                            <div className='px-4 pt-12'>No games found</div>
                         )}
                     </>
                 )}
