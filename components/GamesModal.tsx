@@ -44,14 +44,14 @@ export default function GamesModal({
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className='bg-brand-base/90 absolute top-6 z-10 max-h-[1300px] min-h-80 w-full overflow-y-scroll rounded-b-3xl border-[1px] border-white/10 backdrop-blur-md'
+                className='absolute top-14 z-10 max-h-[600px] min-h-80 w-full overflow-y-scroll rounded-3xl border-[1px] border-white/10 bg-brand-base/90 backdrop-blur-md'
             >
                 {loading ? (
-                    <div className=' px-4 pb-4 pt-12'>
+                    <div className=' p-6'>
                         <Skeleton variant='list' />
                     </div>
                 ) : games.length > 0 ? (
-                    <ul className=' flex flex-col gap-4 px-4 pb-4 pt-12 '>
+                    <ul className=' flex flex-col gap-4 p-6'>
                         {games.map(
                             (game) =>
                                 game.image && (
@@ -94,9 +94,9 @@ export default function GamesModal({
                 ) : (
                     <>
                         {error ? (
-                            <div className='pt-10'>Failed to load games</div>
+                            <div className='p-6'>Failed to load games</div>
                         ) : (
-                            <div className='px-4 pt-12'>No games found</div>
+                            <div className='p-6'>No games found</div>
                         )}
                     </>
                 )}

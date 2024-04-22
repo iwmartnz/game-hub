@@ -10,7 +10,7 @@ type GameDescriptionProps = {
 export default function Description({ rawDescription }: GameDescriptionProps) {
     const [showFullDescription, setShowFullDescription] = useState(false);
     const description: any = parse(rawDescription);
-    const isLargeDescription = rawDescription.length > 1000;
+    const isLargeDescription = rawDescription.length > 700;
 
     function toggleDescription() {
         setShowFullDescription((prevState) => !prevState);
@@ -18,8 +18,9 @@ export default function Description({ rawDescription }: GameDescriptionProps) {
     return (
         <div
             className={cn(
-                'relative h-72 w-full overflow-hidden text-brand-gray-light',
-                showFullDescription && `h-auto w-full overflow-y-clip`
+                'relative max-h-72 w-full overflow-hidden text-brand-gray-light',
+                showFullDescription &&
+                    `h-auto max-h-full w-full overflow-y-clip`
             )}
         >
             {description}
