@@ -1,6 +1,4 @@
 import { Suspense } from 'react';
-import Link from 'next/link';
-
 import Description from '@/components/Description';
 import Gallery from '@/components/Gallery';
 import Heading from '@/components/Heading';
@@ -8,7 +6,7 @@ import Platforms from '@/components/Platforms';
 import GameImage from '@/components/GameImage';
 import Skeleton from '@/components/Skeleton';
 import Meta from '@/components/Meta';
-import Button from '@/components/Button';
+import Link from '@/components/Link';
 import { ExternalIcon } from '@/components/Icon';
 
 import { getGameDetails, getGameScreenshots } from '@/services/games';
@@ -70,14 +68,13 @@ export default async function GamePage({ params }: PageProps) {
                                 <Gallery screenshots={screenshots} />
                             )}
                             {game.website && (
-                                <Button
+                                <Link
                                     className='mt-6 flex h-12 w-full items-center justify-center gap-1 rounded-full hover:scale-100 hover:text-brand-accent'
-                                    link
                                     target='_blank'
                                     href={game.website}
                                 >
                                     Website <ExternalIcon />
-                                </Button>
+                                </Link>
                             )}
                         </Suspense>
                     </div>

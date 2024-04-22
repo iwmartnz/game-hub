@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import * as Popover from '@radix-ui/react-popover';
-import Button from './Button';
 import { MenuIcon } from './Icon';
 import { Genre } from '@/types';
 import Link from 'next/link';
@@ -20,7 +19,7 @@ export default function Menu({ genres }: MenuProps) {
     }
     return (
         <Popover.Root modal open={showMenu} onOpenChange={toggleMenu}>
-            <Popover.Trigger className='hover:bg-brand-base relative flex aspect-square h-12 w-12 items-center justify-center rounded-full border-[1px] border-white/10 bg-black/20 shadow-sm backdrop-blur-sm hover:scale-100 data-[state=open]:text-brand-accent lg:hidden'>
+            <Popover.Trigger className='relative flex aspect-square h-12 w-12 items-center justify-center rounded-full border-[1px] border-white/10 bg-black/20 shadow-sm backdrop-blur-sm hover:scale-100 hover:bg-brand-base data-[state=open]:text-brand-accent lg:hidden'>
                 <MenuIcon size='24px' />
             </Popover.Trigger>
             <Popover.Portal>
@@ -36,7 +35,7 @@ export default function Menu({ genres }: MenuProps) {
                             }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className='bg-brand-base/90 h-auto max-h-[500px] min-w-40 overflow-y-scroll rounded-3xl border-[1px] border-white/10 p-4 backdrop-blur-md lg:hidden'
+                            className='h-auto max-h-[500px] min-w-40 overflow-y-scroll rounded-3xl border-[1px] border-white/10 bg-brand-base/90 p-4 backdrop-blur-md lg:hidden'
                         >
                             {genres && genres.length > 0 ? (
                                 <>
