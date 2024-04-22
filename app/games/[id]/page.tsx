@@ -48,7 +48,7 @@ export default async function GamePage({ params }: PageProps) {
     return (
         <main className='flex flex-col gap-4 overflow-hidden pt-6 lg:flex-row'>
             <div className='lg:w-7/12'>
-                {game.platforms.length > 0 && (
+                {game.platforms && game.platforms.length > 0 && (
                     <Platforms
                         platforms={game.platforms}
                         iconColor='light'
@@ -65,7 +65,7 @@ export default async function GamePage({ params }: PageProps) {
             <div className=' lg:w-5/12'>
                 <Suspense fallback={<Skeleton variant='gallery' />}>
                     <GameImage image={game.image} />
-                    {screenshots.length > 0 && (
+                    {screenshots && screenshots.length > 0 && (
                         <Gallery screenshots={screenshots} />
                     )}
                     {game.website && (

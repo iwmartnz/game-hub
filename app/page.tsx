@@ -16,11 +16,15 @@ export default async function Home() {
             <p className=''>Based on player counts and release date</p>
             <Suspense fallback={<Skeleton variant='grid' />}>
                 <Grid className='py-6'>
-                    {games.map((game) => (
-                        <li key={game.id}>
-                            <GameCard game={game} />
-                        </li>
-                    ))}
+                    {games && games.length > 0 ? (
+                        games.map((game) => (
+                            <li key={game.id}>
+                                <GameCard game={game} />
+                            </li>
+                        ))
+                    ) : (
+                        <div>Failed lo load games</div>
+                    )}
                 </Grid>
             </Suspense>
         </main>
