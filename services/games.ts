@@ -1,3 +1,5 @@
+import { Game } from '@/types';
+
 const API_KEY = process.env.RAWG_API_KEY;
 const PUBLIC_API_KEY = process.env.NEXT_PUBLIC_RAWG_API_KEY;
 
@@ -54,7 +56,7 @@ export const getGameDetails = async (id: string) => {
             `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
         );
         const gameData = await res.json();
-        return {
+        const game: Game = {
             id: gameData.id,
             name: gameData.name,
             slug: gameData.slug,
@@ -72,8 +74,9 @@ export const getGameDetails = async (id: string) => {
             rating: gameData.rating,
             website: gameData.website,
         };
+        return game;
     } catch (error) {
-        return error;
+        console.log(error);
     }
 };
 

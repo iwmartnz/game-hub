@@ -8,6 +8,7 @@ export type Game = {
     metacritic: string;
     genres?: Genre[];
     developers?: Developer[];
+    stores: Store[];
     tags: Tag[];
     released?: string;
     playtime?: string;
