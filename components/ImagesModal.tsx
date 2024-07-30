@@ -50,7 +50,7 @@ export default function Carousel({
                         className=' fixed left-[50%] top-[50%] z-30 flex max-h-[85vh] w-[90vw] max-w-[1000px] translate-x-[-50%] translate-y-[-50%] items-end justify-center rounded-[6px] p-8 focus:outline-none'
                     >
                         <figure className='aspect-video h-auto w-full overflow-hidden rounded-xl bg-brand-black shadow-xl'>
-                            <Image
+                            <img
                                 src={images[index].image}
                                 alt=''
                                 width={800}

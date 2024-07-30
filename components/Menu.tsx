@@ -63,7 +63,7 @@ export default function Menu({ genres }: MenuProps) {
                                                             className=' flex items-center gap-2 font-medium'
                                                         >
                                                             <figure className=' aspect-square h-8 w-8 overflow-hidden rounded-lg'>
-                                                                <Image
+                                                                <img
                                                                     src={
                                                                         genre.image
                                                                     }

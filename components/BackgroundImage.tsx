@@ -9,13 +9,12 @@ export default function BackgroundImage() {
         <>
             {gameImage && (
                 <figure className=' absolute -z-10 h-[40rem] w-screen'>
-                    <Image
+                    <img
                         src={gameImage}
                         className=' absolute top-0 h-[40rem] w-screen object-cover opacity-10'
                         alt=''
                         width={900}
                         height={640}
-                        priority
                     />
                     <div className='absolute left-0 top-[20rem] h-[20rem] w-full bg-gradient-to-t from-brand-black to-brand-black/0' />
                 </figure>

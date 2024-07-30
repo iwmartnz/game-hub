@@ -28,12 +28,11 @@ export default function Gallery({ screenshots }: GalleryProps) {
                         onClick={() => handleOpenModal(index)}
                         className=' aspect-video h-auto w-full overflow-hidden rounded-xl'
                     >
-                        <Image
+                        <img
                             src={screenshot.image}
                             alt=''
                             width={200}
                             height={100}
-                            priority
                             className=' h-full w-full object-cover'
                         />
                     </button>
@@ -43,7 +42,7 @@ export default function Gallery({ screenshots }: GalleryProps) {
                         className='flex aspect-video h-auto w-full items-center justify-center rounded-xl bg-brand-gray-dark'
                         onClick={() => handleOpenModal(3)}
                     >
-                        <Image
+                        <img
                             src={screenshots[3].image}
                             alt=''
                             height={200}

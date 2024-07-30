@@ -22,7 +22,7 @@ export default function GameCard({ game }: GameCardProps) {
             className=' relative flex aspect-[8/9] h-auto w-full flex-col overflow-hidden rounded-3xl shadow-md'
         >
             <figure className=' h-full min-w-full overflow-hidden'>
-                <Image
+                <img
                     src={image}
                     width={400}
                     height={300}

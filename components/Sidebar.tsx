@@ -33,7 +33,7 @@ export default async function Sidebar() {
                                         className=' flex items-center gap-2 font-medium'
                                     >
                                         <figure className=' aspect-square h-8 w-8 overflow-hidden rounded-lg'>
-                                            <Image
+                                            <img
                                                 src={genre.image}
                                                 alt={genre.name}
                                                 width={40}

@@ -20,7 +20,7 @@ export default function GameImage({ image }: GameImageProps) {
 
     return (
         <figure className='aspect-video h-auto w-full overflow-hidden rounded-2xl'>
-            <Image
+            <img
                 src={image}
                 alt=''
                 width='400'
